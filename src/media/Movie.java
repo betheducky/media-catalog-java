@@ -1,7 +1,7 @@
-package src.media;
+package media;
 
-import src.media.interfaces.Previewable;
-import src.media.interfaces.Downloadable;
+import media.interfaces.Previewable;
+import media.interfaces.Downloadable;
 
 public class Movie extends MediaItem implements Previewable, Downloadable {
 
@@ -10,9 +10,12 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
     private double rating;
 
     public Movie(String id, String title, String genre, int durationMinutes, String director, Double rating) {
-
+        
         super(id, title, genre);
 
+        this.durationMinutes = durationMinutes;
+        this.director = director;
+        this.rating = rating;
     }
 
     public int getdurationMinutes() {

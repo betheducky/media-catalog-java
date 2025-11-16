@@ -1,5 +1,5 @@
-package src.media;
-import src.media.interfaces.Previewable;
+package media;
+import media.interfaces.Previewable;
 
 public class Book extends MediaItem implements Previewable{
 
@@ -7,6 +7,7 @@ public class Book extends MediaItem implements Previewable{
     private int pageCount;
 
     public Book(String id, String title, String genre, String author, int pageCount) {
+        
         super(id, title, genre);
 
         this.author = author;

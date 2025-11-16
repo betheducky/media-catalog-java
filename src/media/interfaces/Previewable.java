@@ -1,4 +1,4 @@
-package src.media.interfaces;
+package media.interfaces;
 
 public interface Previewable {
     void preview();

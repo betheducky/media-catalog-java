@@ -1,4 +1,4 @@
-package src.media;
+package media;
 
 public abstract class MediaItem {
     private String id;
