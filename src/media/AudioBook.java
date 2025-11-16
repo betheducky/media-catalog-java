@@ -1,6 +1,6 @@
-package src.media;
+package media;
 
-import src.media.interfaces.Downloadable;
+import media.interfaces.Downloadable;
 
 public class AudioBook extends MediaItem implements Downloadable {
 
@@ -8,7 +8,11 @@ public class AudioBook extends MediaItem implements Downloadable {
     private double lengthHours;
 
     public AudioBook(String id, String title, String genre, String narrator, double lengthHours) {
+
         super(id, title, genre);
+
+        this.narrator = narrator;
+        this.lengthHours = lengthHours;
     }
 
     public String getNarrator() {
