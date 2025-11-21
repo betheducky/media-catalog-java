@@ -50,4 +50,9 @@ public class Book extends MediaItem implements Previewable{
         System.out.println("Chapter 1: Once upon a time, in a land far, far away...");
     }
 
+    @Override
+    public String serialize() {
+        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getAuthor() + "|" + getPageCount();
+    }
+
 }

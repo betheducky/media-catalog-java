@@ -46,4 +46,5 @@ public abstract class MediaItem {
 
     public abstract String getDetails();
     public abstract void consume();
+    public abstract String serialize();
 }

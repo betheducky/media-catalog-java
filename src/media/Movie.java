@@ -18,7 +18,7 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
         this.rating = rating;
     }
 
-    public int getdurationMinutes() {
+    public int getDurationMinutes() {
         return this.durationMinutes;
     }
 
@@ -44,7 +44,7 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
 
     @Override
     public String getDetails() {
-        return "Details for the movie you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getDirector() + ", " + getGenre() + ", " + getdurationMinutes() + ", " + getRating();
+        return "Details for the movie you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getDirector() + ", " + getGenre() + ", " + getDurationMinutes() + ", " + getRating();
     }
 
     @Override
@@ -69,5 +69,10 @@ public class Movie extends MediaItem implements Previewable, Downloadable {
         } else {
             System.out.println("UnavailableException! " + getTitle() + " is not available to download.");
         }
+    }
+
+    @Override
+    public String serialize() {
+        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getDirector() + "|" + getDurationMinutes();
     }
 }

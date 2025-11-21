@@ -55,4 +55,9 @@ public class AudioBook extends MediaItem implements Downloadable {
         }
     }
 
+    @Override
+    public String serialize() {
+        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getNarrator() + "|" + getLengthHours();
+    }
+
 }
