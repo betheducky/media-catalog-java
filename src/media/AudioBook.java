@@ -31,6 +31,10 @@ public class AudioBook extends MediaItem implements Downloadable {
         this.lengthHours = lengthHours;
     }
 
+    public static AudioBook sortDeserialized(String[] fields) {
+        return new AudioBook(fields[0], fields[1], fields[2], fields[4], Integer.parseInt(fields[5]));
+    }
+
     @Override
     public String getDetails() {
         return "Details for the audiobook you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getNarrator() + ", " + getGenre() + ", " + getLengthHours();
@@ -56,8 +60,8 @@ public class AudioBook extends MediaItem implements Downloadable {
     }
 
     @Override
-    public String serialize() {
-        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getNarrator() + "|" + getLengthHours();
+    public String serializeExtra() {
+        return "MOVIE|" + getNarrator() + "|" + getLengthHours();
     }
 
 }

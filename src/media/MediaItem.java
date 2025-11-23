@@ -1,5 +1,7 @@
 package media;
 
+import library.exceptions.InvalidDataException;
+
 public abstract class MediaItem {
     private String id;
     private String title;
@@ -44,7 +46,33 @@ public abstract class MediaItem {
         this.available = available;
     }
 
+    public String serialize() {
+        return getId() + "|" + getTitle() + "|" + getGenre() + "|" + serializeExtra();
+    }
+
+    public static MediaItem deserialize(String line) throws InvalidDataException {
+        String[] fields = line.split("\\|");
+        MediaItem formattedItem;
+        String itemType = fields[3];
+                switch (itemType) {
+                    case "BOOK":
+                        formattedItem = Book.sortDeserialized(fields);
+                        break;
+                    case "MOVIE":
+                        formattedItem = Movie.sortDeserialized(fields);
+                        break;
+                    case "AUDIOBOOK":
+                        formattedItem = AudioBook.sortDeserialized(fields); 
+                        break;
+                    default:
+                        throw new InvalidDataException(itemType + "is not a valid MediaItem type");
+                }
+                return formattedItem;
+    }
+
+
+
     public abstract String getDetails();
     public abstract void consume();
-    public abstract String serialize();
+    public abstract String serializeExtra();
 }

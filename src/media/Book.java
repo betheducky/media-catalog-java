@@ -30,6 +30,10 @@ public class Book extends MediaItem implements Previewable{
         this.pageCount = pageCount;
     }
 
+    public static Book sortDeserialized(String[] fields) {
+        return new Book(fields[0], fields[1], fields[2], fields[4], Integer.parseInt(fields[5]));
+    }
+
     @Override
     public String getDetails() {
         return "Details for the book you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getAuthor() + ", " + getGenre() + ", " + getPageCount();
@@ -51,8 +55,7 @@ public class Book extends MediaItem implements Previewable{
     }
 
     @Override
-    public String serialize() {
-        return "MOVIE|" + getId() + "|" + getTitle() + "|" + getGenre() + "|" + getAuthor() + "|" + getPageCount();
+    public String serializeExtra() {
+        return "MOVIE|" + getAuthor() + "|" + getPageCount();
     }
-
 }
