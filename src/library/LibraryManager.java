@@ -73,7 +73,12 @@ public class LibraryManager {
 
     public void consumeItem(String id) {
         MediaItem item = findById(id);
-        item.consume();
+        
+        if(item != null) {
+            item.consume();
+        } else {
+            System.out.println("Item not found!");
+        }
     }
     
 }
