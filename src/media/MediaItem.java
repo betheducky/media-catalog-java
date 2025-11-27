@@ -12,6 +12,7 @@ public abstract class MediaItem {
         this.id = id;
         this.title = title;
         this.genre = genre;
+        this.available = true;
     }
 
     public String getId() {

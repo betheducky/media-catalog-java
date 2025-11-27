@@ -22,7 +22,7 @@ public class User {
 
     public void borrowItem(MediaItem item) {
         if(!borrowedItems.contains(item) && item.isAvailable()) {
-            item.consume();
+            item.setAvailable(false);
             borrowedItems.add(item);
             System.out.println(item +" has been successfully borrowed.");
         } else {
@@ -33,6 +33,7 @@ public class User {
     public void returnItem(MediaItem item) {
         if(borrowedItems.contains(item)) {
             borrowedItems.remove(item);
+            item.setAvailable(true);
         } else {
             System.out.println("ItemNotFoundException! " + item + " cannot be found to return.");
         }
