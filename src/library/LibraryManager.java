@@ -18,13 +18,18 @@ public class LibraryManager {
 
     public void addItem(MediaItem item) {
         catalog.add(item);
-        System.out.println(item + " has been added to catalog.");
+        System.out.println();
+        System.out.println(item.getTitle() + " has been added to catalog.");
+        System.out.println();
+
     }
 
     public void removeItem(String itemId) {
        MediaItem selectedItem = findById(itemId);
        catalog.remove(selectedItem);
-       System.out.println(selectedItem + " has been removed from catalog.");
+       System.out.println();
+       System.out.println(selectedItem.getTitle() + " has been removed from catalog.");
+       System.out.println();
     }
 
     public MediaItem findById(String id) {
@@ -63,8 +68,12 @@ public class LibraryManager {
 
     public void displayCatalog() {
         if(catalog.size() > 0) {
+            System.out.println();
+            System.out.println("Item count: " + catalog.size());
             for (MediaItem item : catalog) {
-            System.out.println(item.toString());
+            System.out.println();
+            System.out.println(item.getDetails());
+            System.out.println();
         }
         } else {
             System.out.println();

@@ -99,9 +99,6 @@ public class AppController {
             try {
                 MediaItem item = manager.findById(id);
                 user.borrowItem(item);
-                System.out.println("Borrowed!");
-                System.out.println("Your currently borrowed items are as follow: ");
-                System.out.println(user.getBorrowed());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -113,9 +110,6 @@ public class AppController {
             try {
                 MediaItem item = manager.findById(id);
                 user.returnItem(item);
-                System.out.println("Item returned!");
-                System.out.println("Your currently borrowed items are as follow: ");
-                System.out.println(user.getBorrowed());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
