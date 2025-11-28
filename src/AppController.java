@@ -30,10 +30,11 @@ public class AppController {
                 switch(choice) {
                     case 1 -> addMedia();
                     case 2 -> listMedia();
-                    case 3 -> borrowMedia();
-                    case 4 -> returnMedia();
-                    case 5 -> previewMedia();
-                    case 6 -> consumeMedia();
+                    case 3 -> listBorrowed();
+                    case 4 -> borrowMedia();
+                    case 5 -> returnMedia();
+                    case 6 -> previewMedia();
+                    case 7 -> consumeMedia();
                     case 0 -> {
                         System.out.println("Exiting...");
                         running = false;
@@ -48,10 +49,11 @@ public class AppController {
             System.out.println("\n=== Media Library ===");
             System.out.println("1. Add a media item");
             System.out.println("2. List all items");
-            System.out.println("3. Borrow an item");
-            System.out.println("4. Return an item.");
-            System.out.println("5. Preview an item.");
-            System.out.println("6. Demo an item!");
+            System.out.println("3. List borrowed items");
+            System.out.println("4. Borrow an item");
+            System.out.println("5. Return an item");
+            System.out.println("6. Preview an item");
+            System.out.println("7. Demo an item!");
             System.out.println("0. Exit");
         }
 
@@ -91,6 +93,10 @@ public class AppController {
 
         private void listMedia() {
             manager.displayCatalog();
+        }
+
+        private void listBorrowed() {
+            user.getBorrowed();
         }
 
         private void borrowMedia() {

@@ -9,6 +9,8 @@ public class User {
     private String name;
     private List<MediaItem> borrowedItems = new ArrayList<>();
     private List<MediaItem> favorites = new ArrayList<>();
+    private List<String> favoritesTitles = new ArrayList<>();
+
 
     public User(String name) {
 
@@ -26,10 +28,10 @@ public class User {
             borrowedItems.add(item);
             System.out.println();
             System.out.println(item.getTitle() +" has been borrowed.");
-            System.out.println("Updated borrowed items list: " + getBorrowed());
+            System.out.println(getBorrowed());
             System.out.println();
         } else {
-            System.out.println("UnavailableItemException! Item cannot be borrowed.");
+            System.out.println("UnavailableItemException! Item cannot be borrowed unless it is available.");
             System.out.println();
         }
     }
@@ -39,10 +41,10 @@ public class User {
             borrowedItems.remove(item);
             item.setAvailable(true);
             System.out.println(item.getTitle() + " has been returned.");
-            System.out.println("Updated borrowed items list: " + getBorrowed());
+            System.out.println(getBorrowed());
             System.out.println();
         } else {
-            System.out.println("ItemNotFoundException! " + item.getTitle() + " cannot be found to return.");
+            System.out.println("ItemNotFoundException! " + item.getTitle() + " cannot be returned unless you have borrowed it already.");
         }
     }
 
@@ -59,17 +61,21 @@ public class User {
 
     public List<String> getBorrowed() {
         List<String> borrowedTitles = new ArrayList<>();
-        for(MediaItem item : borrowedItems) {
-            borrowedTitles.add(item.getTitle());
-        };
+        if(borrowedItems.size() == 0) {
+            System.out.println("No items are currently borrowed.");
+        } else {
+            for(MediaItem item : borrowedItems) {
+            borrowedTitles.add(item.getId() + " - " + item.getTitle());
+            };
+        }
+        System.out.println("Borrowed items: " + borrowedTitles);
         return borrowedTitles;
     }
 
     public List<String> getFavorites() {
-        List<String> favoriteTitles = new ArrayList<>();
         for(MediaItem item : borrowedItems) {
-            favoriteTitles.add(item.getTitle());
+            favoritesTitles.add(item.getTitle());
         };
-        return favoriteTitles;    
+        return favoritesTitles;    
     }
 }
