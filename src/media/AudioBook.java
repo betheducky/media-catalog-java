@@ -38,7 +38,7 @@ public class AudioBook extends MediaItem implements Downloadable {
 
     @Override
     public String getDetails() {
-        return "Details for the audiobook you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getNarrator() + ", " + getGenre() + ", " + getLengthHours();
+        return "ID: " + getId() + ", Title: " + getTitle() + ", Narrator: " + getNarrator() + ", Genre: " + getGenre() + ", AudioBook Length: " + getLengthHours() + ", Available: " + isAvailable();
     }
 
     @Override

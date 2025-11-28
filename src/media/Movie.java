@@ -48,7 +48,7 @@ public class Movie extends MediaItem implements Previewable, Downloadable  {
 
     @Override
     public String getDetails() {
-        return "Details for the movie you have selected are as follow: " + getId() + ", " + getTitle() + ", " + getDirector() + ", " + getGenre() + ", " + getDurationMinutes() + ", " + getRating();
+        return "ID: " + getId() + ", Title: " + getTitle() + ", Director: " + getDirector() + ", Genre: " + getGenre() + ", Movie Duration: " + getDurationMinutes() + ", Movie Rating: " + getRating() + ", Available: " + isAvailable();
     }
 
     @Override
