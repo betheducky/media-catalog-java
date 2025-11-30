@@ -68,25 +68,26 @@ public class AppController {
             String id = InputHelper.readString("ID: ");
             String title = InputHelper.readString("Title: ");
             String genre = InputHelper.readString("Genre: ");
+            boolean available = true;
 
             switch(type) {
                 case 1 -> {
                     String author = InputHelper.readString("Author: ");
                     int pageCount = InputHelper.readInt("Page Count: ");
-                    manager.addItem(new Book(id, title, genre, true, author, pageCount)); 
+                    manager.addItem(new Book(id, title, genre, available, author, pageCount)); 
                 }
 
                 case 2 -> {
                     int duration = InputHelper.readInt("Duration in minutes: ");
                     String director = InputHelper.readString("Director: ");
                     Double rating = InputHelper.readDouble("Rating: ");
-                    manager.addItem(new Movie(id, title, genre, true, duration, director, rating));
+                    manager.addItem(new Movie(id, title, genre, available, duration, director, rating));
                 }
 
                 case 3 -> {
                     String narrator = InputHelper.readString("Narrator: ");
                     int length = InputHelper.readInt("Length in Minutes: ");
-                    manager.addItem(new AudioBook(id, title, genre, true, narrator, length));
+                    manager.addItem(new AudioBook(id, title, genre, available, narrator, length));
                 }
             }
         }
@@ -96,7 +97,7 @@ public class AppController {
         }
 
         private void listBorrowed() {
-            user.getBorrowed();
+            System.out.println("Current borrowed item list: " + user.getBorrowed());
         }
 
         private void borrowMedia() {

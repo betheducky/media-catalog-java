@@ -68,7 +68,6 @@ public class User {
             borrowedTitles.add(item.getId() + " - " + item.getTitle());
             };
         }
-        System.out.println("Borrowed items: " + borrowedTitles);
         return borrowedTitles;
     }
 
