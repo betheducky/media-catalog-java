@@ -1,4 +1,6 @@
-📚 Library Media System — Java OOP Practice Project
+#📚 Library Catalog — Java OOP Practice Project
+
+---
 
 A Java console-based application built to practice fundamental object-oriented programming concepts, including:
 
@@ -20,7 +22,9 @@ A Java console-based application built to practice fundamental object-oriented p
 
 This project represents an intermediate Java exercise, designed to reinforce backend design patterns and multi-class architecture — not a production system.
 
-🚀 Purpose
+---
+
+##🚀 Purpose
 
 The goal of this app is to simulate a simplified library media system where users can:
 
@@ -36,7 +40,9 @@ The goal of this app is to simulate a simplified library media system where user
 
 This project was created as a learning exercise, focusing on clean architecture, class relationships, and Java fundamentals.
 
-🧠 What This Project Demonstrates
+---
+
+##🧠 What This Project Demonstrates
 
 ✔ Object-Oriented Architecture
 
@@ -50,9 +56,11 @@ This project was created as a learning exercise, focusing on clean architecture,
 
 ✔ Modular Project Structure
 
+---
 
-🧪 How to Run This Project
-✔ Option 1: Run from VSCode (easiest)
+##🧪 How to Run This Project
+
+###✔ Option 1: Run from VSCode (easiest)
 
 Open the folder in VSCode
 
@@ -60,7 +68,7 @@ Open Main.java
 
 Click the Run ▶ button
 
-✔ Option 2: Run from Terminal
+###✔ Option 2: Run from Terminal
 
 Inside the "src" project folder:
 
@@ -70,7 +78,9 @@ javac Main.java
 2. Run:
 java Main
 
-🛠️ Technologies Used
+---
+
+##🛠️ Technologies Used
 
 Java 17+
 
@@ -82,7 +92,9 @@ Custom exceptions
 
 Basic file reading/writing
 
-📌 Notes
+---
+
+##📌 Notes
 
 This project is intentionally console-based to reinforce:
 
