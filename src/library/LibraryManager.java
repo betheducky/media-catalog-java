@@ -36,7 +36,7 @@ public class LibraryManager {
 
     public MediaItem findById(String id) {
         for(MediaItem item : catalog) {
-            if(item.getId().equals(id)){
+            if(id.equals(item.getId())){
                 return item;
             }
         }

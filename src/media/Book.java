@@ -36,7 +36,7 @@ public class Book extends MediaItem implements Previewable{
 
     @Override
     public String getDetails() {
-        return "ID: " + getId() + ", Title" + getTitle() + ", Author: " + getAuthor() + ", Genre: " + getGenre() + ", Page Count: " + getPageCount() + ", Available: " + isAvailable();
+        return "ID: " + getId() + ", Title: " + getTitle() + ", Author: " + getAuthor() + ", Genre: " + getGenre() + ", Page Count: " + getPageCount() + ", Available: " + isAvailable();
     }
 
     @Override
