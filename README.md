@@ -32,7 +32,7 @@ The goal of this app is to simulate a simplified library media system where user
 
 - Trigger type-specific behaviors such as preview(), download(), and consume()
 
-- Search and filter catalog items (IN PROGRESS)
+- Search and filter catalog items
 
 - Store and load catalog data
 
